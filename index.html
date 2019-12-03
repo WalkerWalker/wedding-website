@@ -7,17 +7,29 @@
     <link rel="stylesheet" href="css/bulma.min.css">
 		<link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/flag-icon-css/css/flag-icon.css">
+		<script src="js/jquery-3.4.1.min.js"></script>
 		<script defer src="js/fontawesome/all.js"></script>
+		<script src="js/dom-i18n.min.js"></script>
 		<script src="js/rsvp.js"></script>
   </head>
   <body>
   <!-- first section -->
   <section class="hero is-dark is-fullheight">
-    <div class="hero-body">
+		<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" style="pointer-events:none;">
+					<a class="flag-icon flag-icon-gb" style="width: 2.66em;"  onclick="i18n.changeLanguage('en');"></a>
+        </a>
+				<a class="navbar-item" style="pointer-events:none;">
+					<a class="flag-icon flag-icon-cn" style="width: 2.66em;"  onclick="i18n.changeLanguage('cn');"></a>
+				</a>
+			</div>
+		</nav>
+		<div class="hero-body">
       <div class="container has-text-centered">
-        <h1 class="title">
-          Yiyun &amp; Jiamin 
+        <h1 class="title" data-translatable>
+          Yiyun &amp; Jiamin // 林依韵 &amp; 朱嘉珉
         </h1>
         <h2 class="subtitle">
           tie the knot
@@ -304,5 +316,15 @@
       </div>
     </div>
   </section>
+	<!--TODO no idea why the script needs to at bottom-->
+	<script>
+		var i18n = window.domI18n({
+			languages: ['en', 'cn'],
+				defaultLanguage: 'en'
+		});
+		if (navigator.language.substring(0, 2) == "cn") {
+			i18n.changeLanguage('cn');
+		}
+	</script>
   </body>
 </html>
