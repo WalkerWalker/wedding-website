@@ -140,6 +140,160 @@
 							whether you <u>will</u> or <u>will not</u> be able to join our celebration!
 							Either way, your reply will greatly help us with the wedding arrangement. Thank you!
 						</p>
+						<form id="rsvp-form" class="rsvp-form" action="" method="POST">
+            	<!--first row-->
+							<div class="columns is-centered">
+              	<div class="column is-half">
+                	<div class="control has-icons-left">
+										<input name="field_1" class="input" placeholder="Name">
+										<span class="icon is-small is-left">
+                  		<i class="fas fa-user"></i>
+                  	</span>
+									</div>
+								</div>
+								<div class="column is-half">
+									<div class="control has-icons-left">
+										<input name="field_2" class="input" placeholder="Email (Optional)">
+											<span class="icon is-small is-left">
+												<i class="fas fa-envelope"></i>
+											</span>
+									</div>
+                </div>
+							</div>
+							<!-- second row-->
+							<div class="columns">
+								<div class="control column is-offset-0">
+									<label class="radio">
+										<input type="radio" name="field_3" value="go" onchange="displayQuestion(this.value)">
+										<span style="color:#fff;">
+            					Will see you there!</span>
+									</label>
+									<br>
+									<label class="radio">
+										<input type="radio" name="field_3" value="nogo" onchange="displayQuestion(this.value)">
+										<span style="color:#fff;">
+            					Raising a toast from afar!</span>
+									</label>
+								</div>
+							</div>
+							<!-- third row-->
+							<div id="ifgo">
+								<div class="columns is-centered">
+									<div class="column is-half">
+										<div class="control has-icons-left">
+											<input class="input" name="field_15" id="plusones" type="number" min="0" max="4" 
+												oninput="displayNameAndMore(this.value)" placeholder="Number of Plus One(s)">
+											<span class="icon is-small is-left">
+												<i class="fas fa-users"></i>
+											</span>
+										</div>
+									</div>
+									<div class="column is-half">
+										<div class="control has-icons-left">
+											<input class="input" name="field_5" type="food" placeholder="Dietary Restrictions">
+											<span class="icon is-small is-left">
+												<i class="fas fa-fish"></i>
+											</span>
+                  	</div>
+                	</div>
+              	</div>
+							</div>
+							<!-- plus one first row-->
+							<div id="name1">
+								<p class="info"> Information of the Plus One(s)</p>
+								<div class="columns is-centered">
+                	<div class="column is-half">
+                  	<div class="control has-icons-left">
+											<input class="input" name="field_6" placeholder="Name">
+											<span class="icon is-small is-left">
+												<i class="fa fa-user"></i>
+											</span>
+										</div>
+									</div>
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_7" placeholder="Dietary Restrictions">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-fish"></i>
+                      </span>
+                    </div>
+                  </div>
+								</div>
+							</div>
+              <!-- plus one second row-->
+              <div id="name2">
+                <div class="columns is-centered">
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_8" placeholder="Name">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-user"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_9" placeholder="Dietary Restrictions">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-fish"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- plus one thrid row-->
+              <div id="name3">
+                <div class="columns is-centered">
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_10" placeholder="Name">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-user"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_11" placeholder="Dietary Restrictions">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-fish"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- plus one fourth row-->
+              <div id="name4">
+                <div class="columns is-centered">
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_12" placeholder="Name">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-user"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <input class="input" name="field_13" placeholder="Dietary Restrictions">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-fish"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+							<!-- last line -->
+              <p class="info">Wishes and Notes</p>
+							<textarea class="textarea"
+									placeholder="Anything you want to write!" name="field_14" ></textarea>
+							<!-- message box after submit-->
+							<article class="message" id="alert-wrapper"></article>
+							<!-- button to submit-->
+              <button class="button heartbeathover is-large is-danger">
+								<span class="lang">Let Us Know</span>
+              </button>
+						</form>
 						<br>
 						<span class="icon is-huge">
 							<i class="fas fa-gem"></i>
