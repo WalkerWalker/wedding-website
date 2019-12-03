@@ -12,7 +12,9 @@
 		<script defer src="js/fontawesome/all.js"></script>
 		<script src="js/dom-i18n.min.js"></script>
 		<script src="js/rsvp.js"></script>
-  </head>
+		<script src="js/particles.min.js"></script>
+		<script src=js/particles-config.js></script>
+	</head>
   <body>
   <!-- first section -->
   <section class="hero is-dark is-fullheight">
@@ -44,7 +46,8 @@
   </section>
   <!-- second section -->
   <section class="hero is-primary is-fullheight" id="details" style="position: relative;">
-    <div class="hero-body">
+    <div id="particles" style="position: absolute; height:100%; width:100%;"></div>
+		<div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title" data-translatable>
           Ceremony and Reception // 婚礼和晚宴
