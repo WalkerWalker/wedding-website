@@ -1,7 +1,3 @@
-        section {
-            z-index: 2;
-        }
-
         .icon svg {
             fill: currentColor;
             height: 21px;
@@ -23,20 +19,10 @@
             max-width: 42px;
         }
 
-        .icon.is-huge {
-            height: 4rem;
-            width: 4rem;
-        }
-
         .icon.is-huge svg {
             height: 56px;
             max-width: 56px;
             font-size: 56px;
-        }
-
-        .icon.is-epic {
-            height: 6rem;
-            width: 6rem;
         }
 
         .icon.is-epic svg {
@@ -65,16 +51,6 @@
             -ms-animation-duration: 2s;
             -o-animation-duration: 2s;
             animation-duration: 2s;
-        }
-
-        .heartbeat {
-            -webkit-animation: heart-beats 3s infinite;
-            animation: heart-beats 3s infinite;
-        }
-
-        .heartbeathover:hover {
-            -webkit-animation: heart-beats 3s 1;
-            animation: heart-beats 3s 1;
         }
 
         @-webkit-keyframes bounce {
@@ -152,6 +128,17 @@
                 transform: translateY(-15px);
             }
         }
+        
+				.heartbeat {
+            -webkit-animation: heart-beats 3s infinite;
+            animation: heart-beats 3s infinite;
+        }
+
+        .heartbeathover:hover {
+            -webkit-animation: heart-beats 3s 1;
+            animation: heart-beats 3s 1;
+        }
+
 
         @keyframes heart-beats {
             0% {
@@ -205,9 +192,4 @@
             }
         }
 
-        @media screen and (min-width: 1024px) {
-            .hero.is-dark {
-                background-attachment: fixed !important;
-            }
-        }
 
