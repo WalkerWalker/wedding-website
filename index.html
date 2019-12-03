@@ -164,7 +164,10 @@
 							<div class="columns is-centered">
               	<div class="column is-half">
                 	<div class="control has-icons-left">
-										<input name="field_1" class="input" placeholder="Name">
+										<div data-translatable>
+											<input name="field_1" class="input" placeholder="Name">
+											<input name="field_1" class="input" placeholder="姓名">
+										</div>
 										<span class="icon is-small is-left">
                   		<i class="fas fa-user"></i>
                   	</span>
@@ -172,7 +175,10 @@
 								</div>
 								<div class="column is-half">
 									<div class="control has-icons-left">
-										<input name="field_2" class="input" placeholder="Email (Optional)">
+                    <div data-translatable>
+                      <input name="field_2" class="input" placeholder="Email">
+                      <input name="field_1" class="input" placeholder="邮箱（可选）">
+                    </div>
 											<span class="icon is-small is-left">
 												<i class="fas fa-envelope"></i>
 											</span>
@@ -184,14 +190,16 @@
 								<div class="control column is-offset-0">
 									<label class="radio">
 										<input type="radio" name="field_3" value="go" onchange="displayQuestion(this.value)">
-										<span style="color:#fff;">
-            					Will see you there!</span>
+										<span class="info" style="color:#fff;" data-translatable>
+											Will see you there! // 到时候见。
+										</span>
 									</label>
 									<br>
 									<label class="radio">
 										<input type="radio" name="field_3" value="nogo" onchange="displayQuestion(this.value)">
-										<span style="color:#fff;">
-            					Raising a toast from afar!</span>
+										<span class="info" style="color:#fff;"  data-translatable>
+											Raising a toast from afar! // 远远祝福。
+										</span>
 									</label>
 								</div>
 							</div>
@@ -200,30 +208,40 @@
 								<div class="columns is-centered">
 									<div class="column is-half">
 										<div class="control has-icons-left">
-											<input class="input" name="field_15" id="plusones" type="number" min="0" max="4" 
-												oninput="displayNameAndMore(this.value)" placeholder="Number of Plus One(s)">
-											<span class="icon is-small is-left">
-												<i class="fas fa-users"></i>
-											</span>
-										</div>
-									</div>
-									<div class="column is-half">
-										<div class="control has-icons-left">
-											<input class="input" name="field_5" type="food" placeholder="Dietary Restrictions">
+                      <div data-translatable>
+												<input class="input" name="field_5" placeholder="Dietary Restrictions">
+												<input class="input" name="field_5" placeholder="饮食限制">
+                      </div>
 											<span class="icon is-small is-left">
 												<i class="fas fa-fish"></i>
 											</span>
                   	</div>
                 	</div>
+                  <div class="column is-half">
+                    <div class="control has-icons-left">
+                      <div data-translatable>
+                        <input class="input" name="field_15" id="plusones" type="number" min="0" max="4" 
+                          oninput="displayNameAndMore(this.value)" placeholder="Number of Plus One(s)">
+                        <input class="input" name="field_15" id="plusones" type="number" min="0" max="4" 
+                          oninput="displayNameAndMore(this.value)" placeholder="随行家人人数">
+                      </div>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-users"></i>
+                      </span>
+                    </div>
+                  </div>
               	</div>
 							</div>
 							<!-- plus one first row-->
 							<div id="name1" style="display:none;">
-								<p class="info"> Information of the Plus One(s)</p>
+								<p class="info" data-translatable>Information of the Plus One(s) // 家人信息</p>
 								<div class="columns is-centered">
                 	<div class="column is-half">
                   	<div class="control has-icons-left">
-											<input class="input" name="field_6" placeholder="Name">
+                    	<div data-translatable>
+                      	<input name="field_6" class="input" placeholder="Name">
+                      	<input name="field_6" class="input" placeholder="姓名">
+                    	</div>									
 											<span class="icon is-small is-left">
 												<i class="fa fa-user"></i>
 											</span>
@@ -231,7 +249,10 @@
 									</div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_7" placeholder="Dietary Restrictions">
+                      <div data-translatable>
+                        <input name="field_7" class="input" placeholder="Dietary Restrictions">
+                        <input name="field_7" class="input" placeholder="饮食限制">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-fish"></i>
                       </span>
@@ -244,7 +265,10 @@
                 <div class="columns is-centered">
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_8" placeholder="Name">
+                      <div data-translatable>
+                        <input name="field_8" class="input" placeholder="Name">
+                        <input name="field_8" class="input" placeholder="姓名">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-user"></i>
                       </span>
@@ -252,7 +276,10 @@
                   </div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_9" placeholder="Dietary Restrictions">
+                      <div data-translatable>
+                        <input name="field_9" class="input" placeholder="Dietary Restrictions">
+                        <input name="field_9" class="input" placeholder="饮食限制">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-fish"></i>
                       </span>
@@ -265,7 +292,10 @@
                 <div class="columns is-centered">
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_10" placeholder="Name">
+                      <div data-translatable>
+                        <input name="field_10" class="input" placeholder="Name">
+                        <input name="field_10" class="input" placeholder="姓名">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-user"></i>
                       </span>
@@ -273,7 +303,10 @@
                   </div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_11" placeholder="Dietary Restrictions">
+                      <div data-translatable>
+                        <input name="field_11" class="input" placeholder="Dietary Restrictions">
+                        <input name="field_11" class="input" placeholder="饮食限制">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-fish"></i>
                       </span>
@@ -286,7 +319,10 @@
                 <div class="columns is-centered">
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_12" placeholder="Name">
+                      <div data-translatable>
+                        <input name="field_12" class="input" placeholder="Name">
+                        <input name="field_12" class="input" placeholder="姓名">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-user"></i>
                       </span>
@@ -294,7 +330,10 @@
                   </div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
-                      <input class="input" name="field_13" placeholder="Dietary Restrictions">
+                      <div data-translatable>
+                        <input name="field_13" class="input" placeholder="Dietary Restrictions">
+                        <input name="field_13" class="input" placeholder="饮食限制">
+                      </div>                      
                       <span class="icon is-small is-left">
                         <i class="fa fa-fish"></i>
                       </span>
@@ -303,14 +342,18 @@
                 </div>
               </div>
 							<!-- last line -->
-              <p class="info">Wishes and Notes</p>
-							<textarea class="textarea"
-									placeholder="Anything you want to write!" name="field_14" ></textarea>
+              <p class="info" data-translatable>Wishes and Notes // 祝福与备注</p>
+							<div data-translatable>
+								<textarea class="textarea" name="field_14" 
+										placeholder="Anything you want to write!"></textarea>
+								<textarea class="textarea" name="field_14" 
+               			placeholder="请在这里畅所欲言"></textarea>
+							</div>
 							<!-- message box after submit-->
 							<article class="message" id="alert-wrapper"></article>
 							<!-- button to submit-->
               <button class="button heartbeathover is-large is-danger">
-								<span class="lang">Let Us Know</span>
+								<span class="lang" data-translatable>Let Us Know // 回复</span>
               </button>
 						</form>
 						<br>
