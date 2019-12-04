@@ -131,16 +131,16 @@
 	<section class="hero has-carousel is-fullheight" style="position:relative;">
 		<div class="hero-carousel">
 			<div class='has-background is-active'>
-				<img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" />
+				<img class="is-background" src="images/bluesky.jpg" alt="" />
 			</div>
     	<div class='has-background'>
-      	<img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" />
+      	<img class="is-background" src="images/ocean.jpg" alt="" />
     	</div>
     	<div class='has-background'>
-      	<img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" />
+      	<img class="is-background" src="images/pig.jpg" alt="" />
     	</div>
     	<div class='has-background'>
-      	<img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" />
+      	<img class="is-background" src="images/pumpkin.jpg" alt="" />
     	</div>
   	</div>
 	</section>
@@ -398,10 +398,9 @@
 		}
 
 		bulmaCarousel.attach('.hero-carousel', {
-			slidesToScroll: 1,
-			slidesToShow: 1,
-			pagination: false,
-			effect: 'fade',
+			pagination: true,
+			navigationSwipe: true,
+			effect: 'translate',
 			loop: true
 		});
 	</script>
