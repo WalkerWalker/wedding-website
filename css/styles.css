@@ -17,4 +17,15 @@
 	background-repeat:no-repeat; 
 	background-position:center center;
 	background-size: cover;
+	display: flex; /*make child at bottom*/
+  flex-direction: column;
+}
+
+.itemcaption{
+	background: rgba(0,0,0,0.2);
+	text-align: center;
+	font-size: 1.25rem;
+	color: #fff;
+	padding-bottom: 20px;
+	margin-top: auto;
 }
