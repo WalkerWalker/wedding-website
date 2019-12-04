@@ -131,16 +131,22 @@
 	<section class="hero has-carousel is-fullheight" style="position:relative;">
 		<div class="hero-carousel">
 			<div class='has-background is-active'>
-				<img class="is-background" src="images/bluesky.jpg" alt="" />
+				<div class="slideritem" style="background-image: url(images/bluesky.jpg);"></div>
 			</div>
     	<div class='has-background'>
-      	<img class="is-background" src="images/ocean.jpg" alt="" />
+      	<div class="slideritem" style="background-image: url(images/ocean.jpg);"></div>
     	</div>
     	<div class='has-background'>
-      	<img class="is-background" src="images/pig.jpg" alt="" />
+      	<div class="slideritem" style="background-image: url(images/pig.jpg);"></div>
     	</div>
     	<div class='has-background'>
-      	<img class="is-background" src="images/pumpkin.jpg" alt="" />
+      	<div class="slideritem" style="background-image: url(images/ring.jpg);"></div>
+    	</div>
+    	<div class='has-background'>
+      	<div class="slideritem" style="background-image: url(images/wall.jpg);"></div>
+    	</div>
+    	<div class='has-background'>
+      	<div class="slideritem" style="background-image: url(images/pumpkin.jpg);"></div>
     	</div>
   	</div>
 	</section>
@@ -401,7 +407,8 @@
 			pagination: true,
 			navigationSwipe: true,
 			effect: 'translate',
-			loop: true
+			infinite: true,
+			breakpoints: []
 		});
 	</script>
   </body>

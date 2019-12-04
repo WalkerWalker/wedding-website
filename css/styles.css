@@ -11,3 +11,10 @@
 .info{
 	font-size: 1.25rem;
 }
+
+.slideritem{
+	height: 100vh;
+	background-repeat:no-repeat; 
+	background-position:center center;
+	background-size: cover;
+}
