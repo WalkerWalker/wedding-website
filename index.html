@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/flag-icon-css/css/flag-icon.css">
+		<link rel="stylesheet" href="css/bulma-carousel.min.css">
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<script defer src="js/fontawesome/all.js"></script>
 		<script src="js/dom-i18n.min.js"></script>
@@ -15,6 +16,7 @@
 		<script src="js/particles.min.js"></script>
 		<script src=js/particles-config.js></script>
 		<script src=js/scroll.js></script>
+		<script src=js/bulma-carousel.min.js></script>
 	</head>
   <body>
   <!-- first section -->
@@ -126,6 +128,22 @@
       </div>
     </div>
   </section>
+	<section class="hero has-carousel is-fullheight" style="position:relative;">
+		<div class="hero-carousel">
+			<div class='has-background is-active'>
+				<img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" />
+			</div>
+    	<div class='has-background'>
+      	<img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" />
+    	</div>
+    	<div class='has-background'>
+      	<img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" />
+    	</div>
+    	<div class='has-background'>
+      	<img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" />
+    	</div>
+  	</div>
+	</section>
   <!-- fifth section-->
   <section class="hero is-warning is-fullheight" style="position: relative;">
     <div class="hero-body">
@@ -367,7 +385,7 @@
 					</div>
 				</div>
       </div>
-    </div>
+		</div>
   </section>
 	<!--TODO no idea why the script needs to at bottom-->
 	<script>
@@ -378,6 +396,14 @@
 		if (navigator.language.substring(0, 2) == "cn") {
 			i18n.changeLanguage('cn');
 		}
+
+		bulmaCarousel.attach('.hero-carousel', {
+			slidesToScroll: 1,
+			slidesToShow: 1,
+			pagination: false,
+			effect: 'fade',
+			loop: true
+		});
 	</script>
   </body>
 </html>
