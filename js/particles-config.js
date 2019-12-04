@@ -1,5 +1,5 @@
-$(document).ready(function() {				
-				particlesJS("particles", {
+$(document).ready(function() {        
+        particlesJS("particles", {
                 "particles": {
                     "number": {
                         "value": 160,
