@@ -3,6 +3,7 @@
   font-family: 'Long Cang';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('../fonts/long-cang-v5-chinese-simplified-regular.eot'); /* IE9 Compat Modes */
   src: local('Long Cang Regular'), local('LongCang-Regular'),
        url('../fonts/long-cang-v5-chinese-simplified-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
