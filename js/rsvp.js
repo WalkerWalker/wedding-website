@@ -36,9 +36,9 @@ $(document).ready(function () {
               //     console.log('this is en');
               // }
               if (lang === 'Let Us Know') {
-                  $('#alert-wrapper').html(alert_markup('Thank you. We have received your reply. If you have any questions, drop us an email at hello@yiyunjiamin.com or I am sure you know how to reach us. ^_^'));
-              } else {                  
-      $('#alert-wrapper').html(alert_markup('谢谢。我们已经收到了您的回复。如果有任何问题，可以发邮件至 hello@yiyunjiamin.com 或者您肯定知道如何联系到我们 ^_^'));
+                  $('#alert-wrapper').html(alert_markup('Thank you. We have received your reply. If you have any questions, drop us an email at <a href="mailto:hello@yiyunjiamin.com">hello@yiyunjiamin.com</a> or I am sure you know how to reach us. ^_^'));
+              } else {
+      $('#alert-wrapper').html(alert_markup('谢谢。我们已经收到了您的回复。如果有任何问题，可以发邮件至 <a href="mailto:hello@yiyunjiamin.com">hello@yiyunjiamin.com</a>  或者您肯定知道如何联系到我们 ^_^'));
               }
 
               // sleep(2000);
