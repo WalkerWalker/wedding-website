@@ -192,12 +192,9 @@
     }
 }
 
-.fa-heart {
-    color: #ff415c;
-    margin: 0 2px;
-}
-
 .pulse {
+  margin: 0 2px;
+  color: #ff415c;
 	animation-name: pulse;
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
