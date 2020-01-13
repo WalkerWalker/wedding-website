@@ -480,10 +480,10 @@
   <script>
     var i18n = window.domI18n({
       languages: ['en', 'cn'],
-        defaultLanguage: 'en'
+        defaultLanguage: 'cn'
     });
-    if (navigator.language.substring(0, 2) == "cn") {
-      i18n.changeLanguage('cn');
+    if (navigator.language.substring(0, 2) == 'en' || navigator.language.substring(0, 2) == 'de') {
+      i18n.changeLanguage('en');
     }
 
     bulmaCarousel.attach('.hero-carousel', {
