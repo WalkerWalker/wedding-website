@@ -57,9 +57,9 @@ $(document).ready(function () {
                 // Re-enable submit button
                 submitButton.prop('disabled', false);
                 if (isEnglish) {
-                    submitButton.find('.lang').html('Let Us Know // 回复');
+                    submitButton.find('.lang').html('Let Us Know');
                 } else {
-                    submitButton.find('.lang').html('回复 // Let Us Know');
+                    submitButton.find('.lang').html('回复');
                 }
             });
     });
