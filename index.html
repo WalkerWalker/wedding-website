@@ -305,141 +305,85 @@
                   </label>
                 </div>
               </div>
-              <!-- third row-->
-              <div id="ifgo" style="display:none;">
-                <div class="columns is-centered">
-                  <div class="column is-half">
-                    <div class="control has-icons-left">
-                      <div data-translatable>
-                        <input class="input" name="field_15" id="plusones" type="number" min="0" max="4" 
-                          oninput="displayNameAndMore(this.value)" placeholder="Number of Plus One(s)">
-                        <input class="input" name="field_15" id="plusones" type="number" min="0" max="4" 
-                          oninput="displayNameAndMore(this.value)" placeholder="随行家人人数">
-                      </div>
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-users"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="column is-half">
-                    <div class="control has-icons-left">
-                      <div data-translatable>
-                        <input class="input" name="field_5" placeholder="Dietary Restrictions">
-                        <input class="input" name="field_5" placeholder="饮食限制">
-                      </div>
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-fish"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- plus one first row-->
-              <div id="name1" style="display:none;">
+              <!-- Plus-One Sections (Static) -->
+              <div id="plus-ones-section" style="display:none;">
                 <p class="info" data-translatable style="margin-bottom:1rem; margin-top:1rem;">
-                  Information of the Plus One(s) // 家人信息
+                  Plus-One Information (Optional) // 同行人员信息（可选）
                 </p>
+                
+                <!-- Plus-One 1 -->
                 <div class="columns is-centered" style="margin-bottom:1rem;">
                   <div class="column is-half">
                     <div class="control has-icons-left">
                       <div data-translatable>
-                        <input name="field_6" class="input" placeholder="Name">
-                        <input name="field_6" class="input" placeholder="姓名">
-                      </div>                  
+                        <input name="plus_one_1_name" class="input" placeholder="#1 Plus-One Name">
+                        <input name="plus_one_1_name" class="input" placeholder="#1 同行人员姓名">
+                      </div>
                       <span class="icon is-small is-left">
-                        <i class="fa fa-user"></i>
+                        <i class="fas fa-user-plus"></i>
                       </span>
                     </div>
                   </div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
                       <div data-translatable>
-                        <input name="field_7" class="input" placeholder="Dietary Restrictions">
-                        <input name="field_7" class="input" placeholder="饮食限制">
-                      </div>                      
+                        <input name="plus_one_1_notes" class="input" placeholder="Allergy, Age, Notes">
+                        <input name="plus_one_1_notes" class="input" placeholder="过敏、年龄、备注">
+                      </div>
                       <span class="icon is-small is-left">
-                        <i class="fa fa-fish"></i>
+                        <i class="fas fa-sticky-note"></i>
                       </span>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- plus one second row-->
-              <div id="name2" style="display:none;">
+
+                <!-- Plus-One 2 -->
                 <div class="columns is-centered" style="margin-bottom:1rem;">
                   <div class="column is-half">
                     <div class="control has-icons-left">
                       <div data-translatable>
-                        <input name="field_8" class="input" placeholder="Name">
-                        <input name="field_8" class="input" placeholder="姓名">
-                      </div>                      
+                        <input name="plus_one_2_name" class="input" placeholder="#2 Plus-One Name">
+                        <input name="plus_one_2_name" class="input" placeholder="#2 同行人员姓名">
+                      </div>
                       <span class="icon is-small is-left">
-                        <i class="fa fa-user"></i>
+                        <i class="fas fa-user-plus"></i>
                       </span>
                     </div>
                   </div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
                       <div data-translatable>
-                        <input name="field_9" class="input" placeholder="Dietary Restrictions">
-                        <input name="field_9" class="input" placeholder="饮食限制">
-                      </div>                      
+                        <input name="plus_one_2_notes" class="input" placeholder="Allergy, Age, Notes">
+                        <input name="plus_one_2_notes" class="input" placeholder="过敏、年龄、备注">
+                      </div>
                       <span class="icon is-small is-left">
-                        <i class="fa fa-fish"></i>
+                        <i class="fas fa-sticky-note"></i>
                       </span>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- plus one thrid row-->
-              <div id="name3" style="display:none;">
+
+                <!-- Plus-One 3 -->
                 <div class="columns is-centered" style="margin-bottom:1rem;">
                   <div class="column is-half">
                     <div class="control has-icons-left">
                       <div data-translatable>
-                        <input name="field_10" class="input" placeholder="Name">
-                        <input name="field_10" class="input" placeholder="姓名">
-                      </div>                      
+                        <input name="plus_one_3_name" class="input" placeholder="#3 Plus-One Name">
+                        <input name="plus_one_3_name" class="input" placeholder="#3 同行人员姓名">
+                      </div>
                       <span class="icon is-small is-left">
-                        <i class="fa fa-user"></i>
+                        <i class="fas fa-user-plus"></i>
                       </span>
                     </div>
                   </div>
                   <div class="column is-half">
                     <div class="control has-icons-left">
                       <div data-translatable>
-                        <input name="field_11" class="input" placeholder="Dietary Restrictions">
-                        <input name="field_11" class="input" placeholder="饮食限制">
-                      </div>                      
+                        <input name="plus_one_3_notes" class="input" placeholder="Allergy, Age, Notes">
+                        <input name="plus_one_3_notes" class="input" placeholder="过敏、年龄、备注">
+                      </div>
                       <span class="icon is-small is-left">
-                        <i class="fa fa-fish"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- plus one fourth row-->
-              <div id="name4" style="display:none;">
-                <div class="columns is-centered">
-                  <div class="column is-half">
-                    <div class="control has-icons-left">
-                      <div data-translatable>
-                        <input name="field_12" class="input" placeholder="Name">
-                        <input name="field_12" class="input" placeholder="姓名">
-                      </div>                      
-                      <span class="icon is-small is-left">
-                        <i class="fa fa-user"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="column is-half">
-                    <div class="control has-icons-left">
-                      <div data-translatable>
-                        <input name="field_13" class="input" placeholder="Dietary Restrictions">
-                        <input name="field_13" class="input" placeholder="饮食限制">
-                      </div>                      
-                      <span class="icon is-small is-left">
-                        <i class="fa fa-fish"></i>
+                        <i class="fas fa-sticky-note"></i>
                       </span>
                     </div>
                   </div>
@@ -450,9 +394,9 @@
                 Wishes and Notes // 祝福与备注
               </p>
               <div style="margin-bottom:1rem;" data-translatable>
-                <textarea class="textarea" name="field_14" 
+                <textarea class="textarea" name="general_notes" 
                     placeholder="Anything you want to write!"></textarea>
-                <textarea class="textarea" name="field_14" 
+                <textarea class="textarea" name="general_notes" 
                     placeholder="请在这里畅所欲言"></textarea>
               </div>
               <!-- message box after submit-->

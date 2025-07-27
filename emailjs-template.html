@@ -1,0 +1,41 @@
+<div>
+<!-- Structured data for Google Apps Script -->
+<div style="display: none;">
+RSVP-DATA-START
+Main_Contact_Name: {{main_contact_name}}
+Main_Contact_Email: {{main_contact_email}}
+Attendance: {{attendance}}
+Plus_One_1_Name: {{plus_one_1_name}}
+Plus_One_1_Notes: {{plus_one_1_notes}}
+Plus_One_2_Name: {{plus_one_2_name}}
+Plus_One_2_Notes: {{plus_one_2_notes}}
+Plus_One_3_Name: {{plus_one_3_name}}
+Plus_One_3_Notes: {{plus_one_3_notes}}
+General_Notes: {{general_notes}}
+Timestamp: {{timestamp}}
+RSVP-DATA-END
+</div>
+
+<!-- Visible content -->
+<p><strong>Wedding RSVP from {{main_contact_name}}</strong></p>
+<p>Email: {{main_contact_email}}</p>
+<p>Attending: {{attendance}}</p>
+<p>Submitted: {{timestamp}}</p>
+
+{{#plus_one_1_name}}
+<p>#1 Plus-One: {{plus_one_1_name}} - {{plus_one_1_notes}}</p>
+{{/plus_one_1_name}}
+
+{{#plus_one_2_name}}
+<p>#2 Plus-One: {{plus_one_2_name}} - {{plus_one_2_notes}}</p>
+{{/plus_one_2_name}}
+
+{{#plus_one_3_name}}
+<p>#3 Plus-One: {{plus_one_3_name}} - {{plus_one_3_notes}}</p>
+{{/plus_one_3_name}}
+
+{{#general_notes}}
+<p><strong>General Notes:</strong> {{general_notes}}</p>
+{{/general_notes}}
+
+</div>

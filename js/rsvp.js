@@ -68,23 +68,24 @@ $(document).ready(function () {
 // Collect all form data for EmailJS
 function collectFormData() {
     var data = {
-        name: $('input[name="field_2"]').val() || '',
-        email: $('input[name="field_1"]').val() || '',
+        // Main contact information
+        main_contact_name: $('input[name="field_2"]').val() || '',
+        main_contact_email: $('input[name="field_1"]').val() || '',
         attendance: $('input[name="field_3"]:checked').val() || '',
-        plus_ones: $('input[name="field_15"]').val() || '0',
-        dietary_restrictions: $('input[name="field_5"]').val() || '',
-        notes: $('textarea[name="field_14"]').val() || '',
-        timestamp: new Date().toISOString(),
         
-        // Plus one details
-        plus_one_1_name: $('input[name="field_6"]').val() || '',
-        plus_one_1_dietary: $('input[name="field_7"]').val() || '',
-        plus_one_2_name: $('input[name="field_8"]').val() || '',
-        plus_one_2_dietary: $('input[name="field_9"]').val() || '',
-        plus_one_3_name: $('input[name="field_10"]').val() || '',
-        plus_one_3_dietary: $('input[name="field_11"]').val() || '',
-        plus_one_4_name: $('input[name="field_12"]').val() || '',
-        plus_one_4_dietary: $('input[name="field_13"]').val() || ''
+        // Plus-one information
+        plus_one_1_name: $('input[name="plus_one_1_name"]').val() || '',
+        plus_one_1_notes: $('input[name="plus_one_1_notes"]').val() || '',
+        
+        plus_one_2_name: $('input[name="plus_one_2_name"]').val() || '',
+        plus_one_2_notes: $('input[name="plus_one_2_notes"]').val() || '',
+        
+        plus_one_3_name: $('input[name="plus_one_3_name"]').val() || '',
+        plus_one_3_notes: $('input[name="plus_one_3_notes"]').val() || '',
+        
+        // General information
+        general_notes: $('textarea[name="general_notes"]').val() || '',
+        timestamp: new Date().toISOString()
     };
     
     console.log('Form data collected:', data);
@@ -96,28 +97,30 @@ function alert_markup(msg) {
     return '<div class="message-body">' + msg + '</div>';
 }
 
-// Form logic functions (unchanged)
-function hideExtraNames() {
-    for (i = 1; i <= 4; i++) {
-        document.getElementById('name' + i).style.display = "none";
-    }
-}
-
-function displayNameAndMore(n) {
-    console.log(n);
-    hideExtraNames();
-    for (i = 1; i <= parseInt(n); i++) {
-        document.getElementById('name' + i).style.display = "block";
-    }
-}
+// Simplified form logic for static plus-one sections
 
 function displayQuestion(answer) {
     console.log(answer);
     if (answer == "go") {
-        document.getElementById('ifgo').style.display = "block";
-        displayNameAndMore(document.getElementById('plusones').value);
+        document.getElementById('plus-ones-section').style.display = "block";
     } else if (answer == "nogo") {
-        document.getElementById('ifgo').style.display = "none";
-        hideExtraNames();
+        document.getElementById('plus-ones-section').style.display = "none";
+        // Clear all plus-one fields when switching to "no go"
+        clearPlusOneFields();
     }
+}
+
+// Clear all plus-one input fields
+function clearPlusOneFields() {
+    const plusOneFields = [
+        'plus_one_1_name', 'plus_one_1_notes',
+        'plus_one_2_name', 'plus_one_2_notes', 
+        'plus_one_3_name', 'plus_one_3_notes'
+    ];
+    
+    plusOneFields.forEach(fieldName => {
+        $(`input[name="${fieldName}"]`).val('');
+    });
+    
+    console.log('Cleared all plus-one fields');
 }
