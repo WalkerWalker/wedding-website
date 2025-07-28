@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding RSVP Confirmation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff3860, #3273dc);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-family: 'Long Cang', cursive;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px 20px;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #3273dc;
+        }
+        
+        .status-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #3273dc;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .status-attending {
+            border-left-color: #23d160;
+            background-color: #f0fdf4;
+        }
+        
+        .status-not-attending {
+            border-left-color: #ff3860;
+            background-color: #fef2f2;
+        }
+        
+        .event-details {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .event-details h3 {
+            color: #3273dc;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+        
+        .detail-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            color: #3273dc;
+        }
+        
+        .plus-ones {
+            margin: 20px 0;
+        }
+        
+        .plus-ones h4 {
+            color: #3273dc;
+            margin-bottom: 10px;
+        }
+        
+        .plus-one-item {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border-left: 3px solid #3273dc;
+        }
+        
+        .footer {
+            background-color: #3273dc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .heart {
+            color: #ff3860;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .detail-icon {
+                margin-bottom: 5px;
+            }
+        }
+        
+        /* Conditional language display */
+        .lang-en { display: block; }
+        .lang-cn { display: none; }
+        
+        /* When Chinese is detected, show Chinese and hide English */
+        .chinese-content .lang-en { display: none; }
+        .chinese-content .lang-cn { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container {{language_class}}">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <span class="lang-en">Yiyun & Jiamin</span>
+                <span class="lang-cn">林依韵 & 朱嘉珉</span>
+            </h1>
+            <div class="subtitle">
+                <span class="lang-en">Wedding RSVP Confirmation</span>
+                <span class="lang-cn">婚礼回复确认</span>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Greeting -->
+            <div class="greeting">
+                <span class="lang-en">Dear {{guest_name}},</span>
+                <span class="lang-cn">亲爱的 {{guest_name}}，</span>
+            </div>
+            
+            <!-- Thank you message -->
+            <p>
+                <span class="lang-en">Thank you for your RSVP! We have received your response and are excited to celebrate with you.</span>
+                <span class="lang-cn">感谢您的回复！我们已经收到了您的回复，很期待与您一起庆祝。</span>
+            </p>
+            
+            <!-- RSVP Status -->
+            <div class="status-box {{status_class}}">
+                <strong>
+                    <span class="lang-en">RSVP Status: {{rsvp_status_en}}</span>
+                    <span class="lang-cn">回复状态：{{rsvp_status_cn}}</span>
+                </strong>
+            </div>
+            
+            <!-- Event Details (only show if attending) -->
+            <div class="event-details" style="{{event_details_display}}">
+                <h3>
+                    <span class="lang-en">📅 Wedding Details</span>
+                    <span class="lang-cn">📅 婚礼详情</span>
+                </h3>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <div>
+                        <strong>
+                            <span class="lang-en">Date:</span>
+                            <span class="lang-cn">日期：</span>
+                        </strong>
+                        <span class="lang-en">August 14th, 2026, Friday</span>
+                        <span class="lang-cn">2026年8月14日，周五</span>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">⏰</span>
+                    <div>
+                        <strong>
+                            <span class="lang-en">Wedding starts:</span>
+                            <span class="lang-cn">婚礼开始：</span>
+                        </strong>
+                        11:00
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">🍽️</span>
+                    <div>
+                        <strong>
+                            <span class="lang-en">Lunch starts:</span>
+                            <span class="lang-cn">午餐开始：</span>
+                        </strong>
+                        13:00
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">📍</span>
+                    <div>
+                        <strong>
+                            <span class="lang-en">Location:</span>
+                            <span class="lang-cn">地点：</span>
+                        </strong>
+                        <span class="lang-en">Fischers Fritz, Zurich, Switzerland</span>
+                        <span class="lang-cn">Fischers Fritz, 苏黎世, 瑞士</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plus-ones (if any) -->
+            <div class="plus-ones" style="{{plus_ones_display}}">
+                <h4>
+                    <span class="lang-en">👥 Plus-Ones:</span>
+                    <span class="lang-cn">👥 同行人员：</span>
+                </h4>
+                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px; white-space: pre-line;">
+                    {{plus_ones_list}}
+                </div>
+            </div>
+            
+            <!-- Special notes (if any) -->
+            <div style="{{notes_display}}">
+                <h4>
+                    <span class="lang-en">💭 Your Message:</span>
+                    <span class="lang-cn">💭 您的留言：</span>
+                </h4>
+                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px; font-style: italic;">
+                    {{special_notes}}
+                </div>
+            </div>
+            
+            <!-- Contact info -->
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef;">
+                <p>
+                    <span class="lang-en">If you have any questions or need to make changes, please contact us at:</span>
+                    <span class="lang-cn">如果您有任何问题或需要修改，请联系我们：</span>
+                </p>
+                <p style="margin-top: 10px;">
+                    📧 <a href="mailto:hello@yiyunjiamin.com" style="color: #3273dc;">hello@yiyunjiamin.com</a><br>
+                    🌐 <a href="https://yiyunjiamin.com" style="color: #3273dc;">yiyunjiamin.com</a>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <span class="lang-en">With love and excitement</span>
+                <span class="lang-cn">带着爱与期待</span>
+                <span class="heart">❤️</span>
+            </p>
+            <p style="margin-top: 5px;">
+                <strong>
+                    <span class="lang-en">Yiyun & Jiamin</span>
+                    <span class="lang-cn">林依韵 & 朱嘉珉</span>
+                </strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
