@@ -13,6 +13,30 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script defer src="js/fontawesome/all.js"></script>
     <script src="js/dom-i18n.min.js"></script>
+    <style>
+      details.plan { margin: 0; }
+      details.plan > summary {
+        list-style: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      details.plan > summary::-webkit-details-marker { display: none; }
+      details.plan > summary::after {
+        content: "\203A";
+        font-size: 1.6rem;
+        line-height: 1;
+        color: #b5b5b5;
+        transition: transform 0.2s ease;
+      }
+      details.plan[open] > summary::after { transform: rotate(90deg); }
+      details.plan > .content { margin-top: 1rem; margin-bottom: 0; }
+    </style>
   </head>
   <body>
   <section class="hero is-primary is-fullheight" style="position: relative;">
@@ -44,38 +68,189 @@
         </h1>
         <br>
 
-        <!-- Schedule -->
+        <!-- Draft plan banner -->
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <div class="notification is-warning is-light">
+              <p class="info" data-translatable style="color: #333;">
+                <span>
+                  <strong>🚧 Draft plan — still being worked out!</strong> Nothing's booked yet and plenty may change. Have a read and tell us if it sounds like your kind of adventure.
+                </span>
+                <span>
+                  <strong>🚧 计划草案——还在完善中！</strong>目前尚未预订，很多细节还会变。先看看，如果这样的旅程适合你，告诉我们～
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The short version -->
         <div class="columns is-centered">
           <div class="column is-10 is-8-desktop">
             <div class="box" style="background-color: rgba(255,255,255,0.95);">
               <div class="content has-text-left" data-translatable style="color: #333;">
                 <span>
-                  <p style="margin-bottom: 0.75rem;">⛰️ <strong>The two days after the wedding:</strong> we'll head into the mountains for an overnight trip — two days, one night staying up in the mountains. Likely somewhere like Mt. Rigi, Stoos, or the Grindelwald region (still to be decided).</p>
-                  <p style="margin-bottom: 0.75rem;">🎒 <strong>Pack an overnight bag</strong> and some warm layers — it gets cooler up in the mountains.</p>
-                  <p style="margin-bottom: 0.75rem;">🚗 We may go by car or by train. If you need a day pass, we can probably help you get one at a cheaper price.</p>
+                  <p style="margin-bottom: 0.6rem;"><strong>✨ The short version</strong></p>
+                  <p style="margin-bottom: 0.5rem;">🗓️ Two days, one night, right after the wedding (Sun–Mon, Aug 16–17).</p>
+                  <p style="margin-bottom: 0.5rem;">🏔️ Up to the <strong>Schilthorn</strong>, above Lauterbrunnen — a jaw-dropping corner of the Alps.</p>
+                  <p style="margin-bottom: 0.5rem;">🥾🚠 <strong>Hike up or ride the cable car</strong> — meet in the middle for the cliffside <strong>Thrill Walk</strong>.</p>
+                  <p style="margin-bottom: 0.5rem;">🛌 <strong>Day trip, or stay overnight</strong> and summit on Monday — your call.</p>
+                  <p style="margin-bottom: 0;">👉 For now, just tell us if you're keen. Times &amp; prices to follow.</p>
                 </span>
                 <span>
-                  <p style="margin-bottom: 0.75rem;">⛰️ <strong>婚礼后的两天：</strong>我们一起进山过夜——两天一晚，在山里住一晚。大概会去瑞吉山（Rigi）、Stoos，或格林德瓦（Grindelwald）一带（还没定）。</p>
-                  <p style="margin-bottom: 0.75rem;">🎒 <strong>记得带上过夜的行李</strong>和保暖衣物——山里会比较凉。</p>
-                  <p style="margin-bottom: 0.75rem;">🚗 我们可能开车或坐火车前往。如果你需要一日票（day pass），我们大概可以帮你以更便宜的价格买到。</p>
+                  <p style="margin-bottom: 0.6rem;"><strong>✨ 简短版</strong></p>
+                  <p style="margin-bottom: 0.5rem;">🗓️ 婚礼后两天一晚（周日至周一，8月16–17日）。</p>
+                  <p style="margin-bottom: 0.5rem;">🏔️ 登上劳特布龙嫩之上的<strong>雪朗峰（Schilthorn）</strong>——阿尔卑斯最震撼的角落之一。</p>
+                  <p style="margin-bottom: 0.5rem;">🥾🚠 <strong>徒步或坐缆车上山</strong>——在半山会合，一起走悬崖<strong>惊险步道（Thrill Walk）</strong>。</p>
+                  <p style="margin-bottom: 0.5rem;">🛌 <strong>一日游，或过夜</strong>周一冲顶——你自己定。</p>
+                  <p style="margin-bottom: 0;">👉 现在只想知道你有没有兴趣。时间和票价之后补充。</p>
                 </span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Meeting point -->
+        <!-- Route diagram -->
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <div class="box" style="background-color: rgba(255,255,255,0.95);">
+              <figure class="image" style="max-width: 320px; margin: 0 auto 0.9rem;">
+                <img src="images/schilthorn-route-map.png" alt="Cable car line: Stechelberg to Mürren to Birg to Schilthorn">
+              </figure>
+              <div class="content has-text-left" data-translatable style="color: #555; font-size: 0.95rem;">
+                <span>
+                  <p style="margin-bottom: 0.4rem;">🚞 <strong>The line:</strong> valley (Stechelberg) → Mürren → Birg → Schilthorn.</p>
+                  <p style="margin-bottom: 0;">🥾 On foot: Mürren → hut <strong>~2h40</strong> · hut → Birg <strong>~40 min</strong> · Birg → summit <strong>~1h30–1h40</strong>.</p>
+                </span>
+                <span>
+                  <p style="margin-bottom: 0.4rem;">🚞 <strong>缆车线路：</strong>山谷（Stechelberg）→ 米伦（Mürren）→ 比尔格（Birg）→ 雪朗峰（Schilthorn）。</p>
+                  <p style="margin-bottom: 0;">🥾 徒步：米伦 → 山屋 <strong>约2小时40分</strong> · 山屋 → 比尔格 <strong>约40分</strong> · 比尔格 → 山顶 <strong>约1小时30–40分</strong>。</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Getting there (collapsible) -->
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <div class="box" style="background-color: rgba(255,255,255,0.95);">
+              <details class="plan">
+                <summary>
+                  <span data-translatable>
+                    <span>🚞 Getting there · Zurich → Mürren</span>
+                    <span>🚞 出发 · 苏黎世 → 米伦</span>
+                  </span>
+                </summary>
+                <div class="content has-text-left" data-translatable style="color: #333;">
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🌅 Sunday morning we leave Zurich together — one group by car, one by train — and meet in the valley at <strong>Stechelberg</strong>.</p>
+                    <p style="margin-bottom: 0;">🚡 From there a cable car takes us up to <strong>Mürren</strong>, a car-free mountain village where the adventure begins.</p>
+                  </span>
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🌅 周日上午我们一起从苏黎世出发——一队开车，一队坐火车——在山谷的 <strong>Stechelberg</strong> 会合。</p>
+                    <p style="margin-bottom: 0;">🚡 再坐缆车上到 <strong>米伦（Mürren）</strong>，一个无车的山村，旅程从这里开始。</p>
+                  </span>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- The big choice (collapsible) -->
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <div class="box" style="background-color: rgba(255,255,255,0.95);">
+              <details class="plan">
+                <summary>
+                  <span data-translatable>
+                    <span>🥾🚠 The choice · Mürren → Birg</span>
+                    <span>🥾🚠 分岔口 · 米伦 → 比尔格</span>
+                  </span>
+                </summary>
+                <div class="content has-text-left" data-translatable style="color: #333;">
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🥾 <strong>Hikers</strong> climb from Mürren, past the Schilthornhütte, up to Birg (~3½ hours).</p>
+                    <p style="margin-bottom: 0.5rem;">🚠 <strong>Everyone else</strong> rides the cable car up in minutes — and can carry on to the summit for the views first.</p>
+                    <p style="margin-bottom: 0;">🌉 We all meet at <strong>Birg</strong> for the <strong>Thrill Walk</strong> — glass floors and walkways bolted to the cliff.</p>
+                  </span>
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🥾 <strong>徒步的人</strong>从米伦出发，经过雪朗峰山屋，一路爬到比尔格（约3个半小时）。</p>
+                    <p style="margin-bottom: 0.5rem;">🚠 <strong>其他人</strong>坐缆车几分钟就上去——还可以先到山顶看风景。</p>
+                    <p style="margin-bottom: 0;">🌉 大家在 <strong>比尔格（Birg）</strong> 会合，一起走 <strong>惊险步道（Thrill Walk）</strong>——固定在悬崖上的玻璃地板和栈道。</p>
+                  </span>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stay overnight + summit (collapsible) -->
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <div class="box" style="background-color: rgba(255,255,255,0.95);">
+              <details class="plan">
+                <summary>
+                  <span data-translatable>
+                    <span>🌙 Stay the night → Monday summit</span>
+                    <span>🌙 过夜 → 周一冲顶</span>
+                  </span>
+                </summary>
+                <div class="content has-text-left" data-translatable style="color: #333;">
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🏡 After the Thrill Walk, <strong>day-trippers</strong> take the cable car down and head home to Zurich.</p>
+                    <p style="margin-bottom: 0.5rem;">🌙 The <strong>overnight crew</strong> walks 40 min down to the <strong>Schilthornhütte</strong> for dinner and a night in the hut.</p>
+                    <p style="margin-bottom: 0;">🌅 <strong>Monday</strong> we push for the summit (Piz Gloria), then head down. Need to leave early? Catch the first cable car down.</p>
+                  </span>
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🏡 走完惊险步道后，<strong>一日游的人</strong>坐缆车下山，返回苏黎世。</p>
+                    <p style="margin-bottom: 0.5rem;">🌙 <strong>过夜的一队</strong>徒步40分钟下到 <strong>雪朗峰山屋（Schilthornhütte）</strong>，吃晚餐、住一晚。</p>
+                    <p style="margin-bottom: 0;">🌅 <strong>周一</strong>我们冲顶（Piz Gloria），再下山。需要早点走？可以赶头班缆车下山。</p>
+                  </span>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tickets & packing (collapsible) -->
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <div class="box" style="background-color: rgba(255,255,255,0.95);">
+              <details class="plan">
+                <summary>
+                  <span data-translatable>
+                    <span>🎟️ Tickets &amp; what to pack</span>
+                    <span>🎟️ 票价 &amp; 带什么</span>
+                  </span>
+                </summary>
+                <div class="content has-text-left" data-translatable style="color: #333;">
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🎟️ With a <strong>Swiss Travel Pass</strong>: free up to Mürren, then about <strong>50 CHF</strong> per person to the summit. No pass? We can probably help you get a cheaper day pass.</p>
+                    <p style="margin-bottom: 0.5rem;">🎒 An overnight bag, warm layers, and sturdy grippy shoes (no flip-flops — the Thrill Walk has mesh floors).</p>
+                    <p style="margin-bottom: 0;">🚿 A few 1 CHF coins for a hot shower at the hut.</p>
+                  </span>
+                  <span>
+                    <p style="margin-bottom: 0.5rem;">🎟️ 持 <strong>瑞士旅行通票（Swiss Travel Pass）</strong>：到米伦免费，再上到山顶每人约 <strong>50 瑞郎</strong>。没有通票？我们大概能帮你买到更便宜的一日票。</p>
+                    <p style="margin-bottom: 0.5rem;">🎒 过夜行李、保暖衣物，以及防滑的结实鞋子（别穿人字拖——惊险步道是网格地板）。</p>
+                    <p style="margin-bottom: 0;">🚿 几枚 1 瑞郎硬币，在山屋洗个热水澡。</p>
+                  </span>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming soon note -->
         <div class="columns is-centered">
           <div class="column is-10 is-8-desktop">
             <div class="notification is-warning is-light">
               <p class="info" data-translatable style="color: #333;">
                 <span>
-                  <strong>📍 Meeting point: Zurich HB (main station) at 10:00 on Sunday.</strong>
-                  Everything is subject to change depending on the weather and our plans — we'll keep you posted!
+                  <strong>📝 Still to come:</strong> exact times, final dates and route. We'll keep this page updated!
                 </span>
                 <span>
-                  <strong>📍 集合地点：周日 10:00 苏黎世火车总站（Zurich HB）。</strong>
-                  一切都可能根据天气和安排调整——我们会随时通知大家！
+                  <strong>📝 之后补充：</strong>具体时间、最终日期和路线。我们会持续更新本页面！
                 </span>
               </p>
             </div>
